@@ -552,7 +552,7 @@ namespace SeguraChain_Lib.Instance.Node.Network.Services.P2P.Sync.ServerSync.Cli
                         packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_DISCONNECT_REQUEST ||
                         packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_MEM_POOl_BLOCK_HEIGHT_LIST_BROADCAST_MODE ||
                         packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_MEM_POOl_TRANSACTION_BY_BLOCK_HEIGHT_BROADCAST_MODE ||
-                        packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_MEM_POOL_TRANSACTION_VOTE || 
+                        packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_MEM_POOL_TRANSACTION_VOTE ||
                         packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_MEM_POOL_TRANSACTION_BROADCAST_CONFIRMATION_RECEIVED)
                     {
                         invalidPacketBroadcast = false;
@@ -566,7 +566,7 @@ namespace SeguraChain_Lib.Instance.Node.Network.Services.P2P.Sync.ServerSync.Cli
                 else
                 {
                     if (packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_MEM_POOl_BLOCK_HEIGHT_LIST_BROADCAST_MODE ||
-                        packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_MEM_POOl_TRANSACTION_BY_BLOCK_HEIGHT_BROADCAST_MODE || 
+                        packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_MEM_POOl_TRANSACTION_BY_BLOCK_HEIGHT_BROADCAST_MODE ||
                         packetSendObject.PacketOrder == ClassPeerEnumPacketSend.ASK_MEM_POOL_TRANSACTION_BROADCAST_CONFIRMATION_RECEIVED)
                     {
                         return ClassPeerNetworkClientServerHandlePacketEnumStatus.INVALID_TYPE_PACKET;
@@ -2212,7 +2212,7 @@ namespace SeguraChain_Lib.Instance.Node.Network.Services.P2P.Sync.ServerSync.Cli
                                                                             long timestampStartWaitingResponse = ClassUtility.GetCurrentTimestampInMillisecond();
                                                                             while (_onWaitingMemPoolTransactionConfirmationReceived)
                                                                             {
-                                                                                if (timestampStartWaitingResponse + (_peerNetworkSettingObject.PeerMaxDelayAwaitResponse *1000) < ClassUtility.GetCurrentTimestampInMillisecond())
+                                                                                if (timestampStartWaitingResponse + (_peerNetworkSettingObject.PeerMaxDelayAwaitResponse * 1000) < ClassUtility.GetCurrentTimestampInMillisecond())
                                                                                 {
                                                                                     break;
                                                                                 }

@@ -1144,7 +1144,6 @@ namespace SeguraChain_Lib.Utility
         }
     }
 
-
     public static class ClassUtilityNetworkStreamExtension
     {
         /// <summary>

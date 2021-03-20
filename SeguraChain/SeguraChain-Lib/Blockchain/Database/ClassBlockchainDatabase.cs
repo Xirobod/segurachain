@@ -507,25 +507,42 @@ namespace SeguraChain_Lib.Blockchain.Database
                             blockObject = await BlockchainMemoryManagement.GetBlockDataStrategy(blockHeight, false, _cancellationTokenStopBlockchain);
                         }
 
+                        bool blockIsLocked = false;
 
-                        foreach (string blockDataLine in ClassBlockUtility.BlockObjectToStringBlockData(blockObject, blockchainDatabaseSetting.DataSetting.DataFormatIsJson))
+                        try
                         {
-                            byte[] blockDataLineCopy = utf8Encoding.GetBytes(blockDataLine);
 
-                            if (blockchainDatabaseSetting.DataSetting.EnableEncryptionDatabase)
+                            while (!blockIsLocked)
                             {
-                                ClassAes.EncryptionProcess(blockDataLineCopy, _blockchainDataStandardEncryptionKey, _blockchainDataStandardEncryptionKeyIv, out blockDataLineCopy);
+                                blockIsLocked = Monitor.TryEnter(blockObject);
                             }
 
-                            writerBlock.WriteLine(utf8Encoding.GetString(blockDataLineCopy));
+                            foreach (string blockDataLine in ClassBlockUtility.BlockObjectToStringBlockData(blockObject, blockchainDatabaseSetting.DataSetting.DataFormatIsJson))
+                            {
+                                byte[] blockDataLineCopy = utf8Encoding.GetBytes(blockDataLine);
 
-                            // Clean up.
-                            Array.Clear(blockDataLineCopy, 0, blockDataLineCopy.Length);
+                                if (blockchainDatabaseSetting.DataSetting.EnableEncryptionDatabase)
+                                {
+                                    ClassAes.EncryptionProcess(blockDataLineCopy, _blockchainDataStandardEncryptionKey, _blockchainDataStandardEncryptionKeyIv, out blockDataLineCopy);
+                                }
 
+                                writerBlock.WriteLine(utf8Encoding.GetString(blockDataLineCopy));
+
+                                // Clean up.
+                                Array.Clear(blockDataLineCopy, 0, blockDataLineCopy.Length);
+
+                            }
+
+                            totalBlockSaved++;
+                            totalTxSaved += blockObject.BlockTransactions.Count;
                         }
-
-                        totalBlockSaved++;
-                        totalTxSaved += blockObject.BlockTransactions.Count;
+                        finally
+                        {
+                            if (blockIsLocked)
+                            {
+                                Monitor.Exit(blockObject);
+                            }
+                        }
 
                     }
                 }
