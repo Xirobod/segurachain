@@ -30,6 +30,6 @@ More upgrades of the project will coming soon, the complete version should be do
 
 Every devs and potential users can send me their returns about the project, potential fix, issues and more.
 
-If you want to donate to the project here is my BTC Address: 39mUsJFhjU6GDrchCkQ4iJsmdvD8S2jpzU
+<h3>If you want to donate to the project here is my BTC Address: 39mUsJFhjU6GDrchCkQ4iJsmdvD8S2jpzU</h3>
 
 Thank you for your help. 
