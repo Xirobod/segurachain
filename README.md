@@ -8,7 +8,9 @@ indirectly this will increase the difficulty for those who wish to create one to
 create one. When a product, a task to be accomplished becomes simple, the final value of this one generally becomes much lower over time.
 Which should allow users to be more vigilant. 
 
-Please read the whitepaper document, the document is available in french only at the moment and 2 parts are not written yet.
+Please read the whitepaper document, the document is available in french only and at the moment and 2 parts of the whitepaper
+who explain some important process are not written into this one.
+Once the whitepaper is complete, I will make the translation of this one into english.
 
 Everything has been developed in C#, and support Net5, a downgrade to NetFramework 4.8 is available.
 
