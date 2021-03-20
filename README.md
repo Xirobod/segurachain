@@ -49,6 +49,8 @@ Thank you for your help.
 
 -> Complete some parts of the whitepaper and translate it in english.
 
+-> Complete wallets balance checkpoint disk cache process.
+
 -> Develop the IO Cache Network mode.
 
 -> Develop the RPC Wallet.
