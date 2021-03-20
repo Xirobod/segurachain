@@ -5,8 +5,9 @@ it allows to easily create and understand a decentralized blockchain process, it
 allowing to include updates on it without editing the content of the Blockchain. 
 
 It was developed to update Xiropht which is a centralized cryptocurrency, once the stable version is complete.
-For now be sure to use the current version centralized of Xiropht: https://xiropht.com/
-Official Github of Xiropht current version: https://github.com/XIROPHT
+
+<h4>For now be sure to use the current version centralized of Xiropht: https://xiropht.com/</h4>
+<h4>Official Github of Xiropht current version: https://github.com/XIROPHT</h4>
 
 <h4>It will also make it possible to further trivialize cryptocurrencies, because this technology is simple to set up,
 indirectly this will increase the difficulty for those who wish to create one to distinguish
