@@ -31,5 +31,11 @@ More upgrades of the project will coming soon, the complete version should be do
 Every devs and potential users can send me their returns about the project, potential fix, issues and more.
 
 <h4>If you want to donate to the project here is my BTC Address: 39mUsJFhjU6GDrchCkQ4iJsmdvD8S2jpzU</h4>
-
 Thank you for your help. 
+
+<h3>To do list:</h3>
+-> Complete some parts of the whitepaper and translate it in english.
+-> Develop the IO Cache Network mode.
+-> Develop the RPC Wallet.
+-> Develop an example of Mining Pool.
+-> Finish optimizations.
