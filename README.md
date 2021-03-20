@@ -15,7 +15,7 @@ from the moment when users in general will understand that it is simple.
 When a product, a task to be accomplished becomes simple, the final value of this one generally becomes much lower over time.
 Which should allow users to be more vigilant.</h4>
 
-Please read the whitepaper document, the document is available in french only and at the moment and 2 parts of the whitepaper
+Please read the whitepaper document, the document is available in french only and at the moment 2 parts of the whitepaper
 who explain some important process are not written into this one.
 
 Once the whitepaper is complete, I will make the translation of this one into english.
