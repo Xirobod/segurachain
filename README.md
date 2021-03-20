@@ -1,0 +1,23 @@
+<h1>SeguraChain is experimental, do not use it like he is, until the stable release is complete and available.</h1>
+
+Summary: SeguraChain (Secured Chain translated from Spanish) is a technology developed mainly in C#,
+it allows to easily create and understand a decentralized blockchain process, it can be configured to support a sovereign update system,
+allowing to include updates on it without editing the content of the Blockchain. It was developed to update Xiropht, which is a centralized cryptocurrency.
+It will also make it possible to further trivialize cryptocurrencies, because this technology is simple to set up,
+indirectly this will increase the difficulty for those who wish to create one to distinguish from the moment when users in general will understand that it is simple.
+create one. When a product, a task to be accomplished becomes simple, the final value of this one generally becomes much lower over time.
+Which should allow users to be more vigilant. 
+
+Please read the whitepaper document, the document is available in french only at the moment and 2 parts are not written yet.
+
+Everything has been developed in C#, and support Net5, a downgrade to NetFramework 4.8 is available.
+
+Visual Studio 2019 16.9 is required.
+
+More upgrades of the project will coming soon, the complete version should be done the 1st July.
+
+Every devs and potential users can send me their returns about the project, potential fix, issues and more.
+
+If you want to donate to the project here is my BTC Address: 39mUsJFhjU6GDrchCkQ4iJsmdvD8S2jpzU
+
+Thank you for your help. 
