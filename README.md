@@ -26,6 +26,18 @@ Other technical informations available on the whitepaper:
 
 <h5>Visual Studio 2019 16.9 is required.</h5>
 
+<h5>Libraries:</h5>
+
+-> LZ4Net.
+
+-> Newtonsoft.Json.
+
+-> Open.NAT.
+
+-> Portable.BouncyCastle.
+
+-> ZXing.net (Desktop wallet only).
+
 More upgrades of the project will coming soon, the complete version should be done the 1st July.
 
 Every devs and potential users can send me their returns about the project, potential fix, issues and more.
