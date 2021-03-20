@@ -47,6 +47,8 @@ Thank you for your help.
 
 <h3>To do list:</h3>
 
+-> Improve MemPool broadcast instances:
+
 -> Complete some parts of the whitepaper and translate it in english.
 
 -> Complete wallets balance checkpoint disk cache process.
