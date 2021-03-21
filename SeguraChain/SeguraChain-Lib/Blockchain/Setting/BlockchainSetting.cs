@@ -184,6 +184,7 @@ namespace SeguraChain_Lib.Blockchain.Setting
         public const int PeerMaxRangeBlockToSyncPerRequest = 5; // Amount of blocks to sync per range.
         public const int PeerMaxRangeTransactionToSyncPerRequest = 5; // Amount of transactions to sync per range.
         public const bool PeerEnableSyncTransactionByRange = true;
+        public const bool PeerEnableSovereignPeerVote = false;
 
         /// <summary>
         /// The default P2P port.

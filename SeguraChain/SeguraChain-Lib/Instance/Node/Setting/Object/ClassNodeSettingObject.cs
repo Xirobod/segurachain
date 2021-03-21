@@ -75,6 +75,7 @@ namespace SeguraChain_Lib.Instance.Node.Setting.Object
         public int PeerMaxRangeBlockToSyncPerRequest;
         public int PeerMaxRangeTransactionToSyncPerRequest;
         public bool PeerEnableSyncTransactionByRange;
+        public bool PeerEnableSovereignPeerVote;
 
         /// <summary>
         /// Set default values.
@@ -110,6 +111,7 @@ namespace SeguraChain_Lib.Instance.Node.Setting.Object
             PeerMaxRangeBlockToSyncPerRequest = BlockchainSetting.PeerMaxRangeBlockToSyncPerRequest;
             PeerMaxRangeTransactionToSyncPerRequest = BlockchainSetting.PeerMaxRangeTransactionToSyncPerRequest;
             PeerEnableSyncTransactionByRange = BlockchainSetting.PeerEnableSyncTransactionByRange;
+            PeerEnableSovereignPeerVote = BlockchainSetting.PeerEnableSovereignPeerVote;
         }
     }
 

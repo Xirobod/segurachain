@@ -450,34 +450,36 @@ namespace SeguraChain_Lib.Instance.Node.Network.Services.P2P.Broadcast
                                                                         {
                                                                             bool peerRanked = false;
 
-                                                                            if (ClassPeerCheckManager.PeerHasSeedRank(peerListTarget[peerKey].PeerIpTarget, peerListTarget[peerKey].PeerUniqueIdTarget, out string numericPublicKeyOut, out _))
+                                                                            if (peerNetworkSetting.PeerEnableSovereignPeerVote)
                                                                             {
-                                                                                if (!listOfRankedPeerPublicKeySaved.Contains(numericPublicKeyOut))
+                                                                                if (ClassPeerCheckManager.PeerHasSeedRank(peerListTarget[peerKey].PeerIpTarget, peerListTarget[peerKey].PeerUniqueIdTarget, out string numericPublicKeyOut, out _))
                                                                                 {
-
-
-                                                                                    if (ClassPeerCheckManager.CheckPeerSeedNumericPacketSignature(JsonConvert.SerializeObject(new ClassPeerPacketSendMiningShareVote()
+                                                                                    if (!listOfRankedPeerPublicKeySaved.Contains(numericPublicKeyOut))
                                                                                     {
-                                                                                        BlockHeight = peerPacketSendMiningShareVote.BlockHeight,
-                                                                                        VoteStatus = peerPacketSendMiningShareVote.VoteStatus,
-                                                                                        PacketTimestamp = peerPacketSendMiningShareVote.PacketTimestamp
-                                                                                    }),
-                                                                                    peerPacketSendMiningShareVote.PacketNumericHash,
-                                                                                    peerPacketSendMiningShareVote.PacketNumericSignature,
-                                                                                    numericPublicKeyOut,
-                                                                                    cancellationTokenSourceMiningShareVote))
-                                                                                    {
-                                                                                        // Do not allow multiple seed votes from the same numeric public key.
-                                                                                        if (!listOfRankedPeerPublicKeySaved.Contains(numericPublicKeyOut))
+                                                                                        if (ClassPeerCheckManager.CheckPeerSeedNumericPacketSignature(JsonConvert.SerializeObject(new ClassPeerPacketSendMiningShareVote()
                                                                                         {
-                                                                                            if (listOfRankedPeerPublicKeySaved.Add(numericPublicKeyOut))
+                                                                                            BlockHeight = peerPacketSendMiningShareVote.BlockHeight,
+                                                                                            VoteStatus = peerPacketSendMiningShareVote.VoteStatus,
+                                                                                            PacketTimestamp = peerPacketSendMiningShareVote.PacketTimestamp
+                                                                                        }),
+                                                                                        peerPacketSendMiningShareVote.PacketNumericHash,
+                                                                                        peerPacketSendMiningShareVote.PacketNumericSignature,
+                                                                                        numericPublicKeyOut,
+                                                                                        cancellationTokenSourceMiningShareVote))
+                                                                                        {
+                                                                                            // Do not allow multiple seed votes from the same numeric public key.
+                                                                                            if (!listOfRankedPeerPublicKeySaved.Contains(numericPublicKeyOut))
                                                                                             {
-                                                                                                peerRanked = true;
+                                                                                                if (listOfRankedPeerPublicKeySaved.Add(numericPublicKeyOut))
+                                                                                                {
+                                                                                                    peerRanked = true;
+                                                                                                }
                                                                                             }
                                                                                         }
                                                                                     }
                                                                                 }
                                                                             }
+
 
                                                                             switch (voteStatus)
                                                                             {
@@ -977,27 +979,30 @@ namespace SeguraChain_Lib.Instance.Node.Network.Services.P2P.Broadcast
 
                                                                     bool peerRanked = false;
 
-                                                                    if (ClassPeerCheckManager.PeerHasSeedRank(peerListTarget[peerKey].PeerIpTarget, peerListTarget[peerKey].PeerUniqueIdTarget, out string numericPublicKeyOut, out _))
+                                                                    if (peerNetworkSetting.PeerEnableSovereignPeerVote)
                                                                     {
-                                                                        if (!listOfRankedPeerPublicKeySaved.Contains(numericPublicKeyOut))
+                                                                        if (ClassPeerCheckManager.PeerHasSeedRank(peerListTarget[peerKey].PeerIpTarget, peerListTarget[peerKey].PeerUniqueIdTarget, out string numericPublicKeyOut, out _))
                                                                         {
-                                                                            if (ClassPeerCheckManager.CheckPeerSeedNumericPacketSignature(JsonConvert.SerializeObject(new ClassPeerPacketSendMemPoolTransactionVote()
+                                                                            if (!listOfRankedPeerPublicKeySaved.Contains(numericPublicKeyOut))
                                                                             {
-                                                                                TransactionHash = packetSendMemPoolTransactionVote.TransactionHash,
-                                                                                TransactionStatus = packetSendMemPoolTransactionVote.TransactionStatus,
-                                                                                PacketTimestamp = packetSendMemPoolTransactionVote.PacketTimestamp
-                                                                            }),
-                                                                            packetSendMemPoolTransactionVote.PacketNumericHash,
-                                                                            packetSendMemPoolTransactionVote.PacketNumericSignature,
-                                                                            numericPublicKeyOut,
-                                                                            cancellationTokenSourceMemPoolTxVote))
-                                                                            {
+                                                                                if (ClassPeerCheckManager.CheckPeerSeedNumericPacketSignature(JsonConvert.SerializeObject(new ClassPeerPacketSendMemPoolTransactionVote()
+                                                                                {
+                                                                                    TransactionHash = packetSendMemPoolTransactionVote.TransactionHash,
+                                                                                    TransactionStatus = packetSendMemPoolTransactionVote.TransactionStatus,
+                                                                                    PacketTimestamp = packetSendMemPoolTransactionVote.PacketTimestamp
+                                                                                }),
+                                                                                packetSendMemPoolTransactionVote.PacketNumericHash,
+                                                                                packetSendMemPoolTransactionVote.PacketNumericSignature,
+                                                                                numericPublicKeyOut,
+                                                                                cancellationTokenSourceMemPoolTxVote))
+                                                                                {
                                                                                     // Do not allow multiple seed votes from the same numeric public key.
                                                                                     if (!listOfRankedPeerPublicKeySaved.Contains(numericPublicKeyOut))
-                                                                                {
-                                                                                    if (listOfRankedPeerPublicKeySaved.Add(numericPublicKeyOut))
                                                                                     {
-                                                                                        peerRanked = true;
+                                                                                        if (listOfRankedPeerPublicKeySaved.Add(numericPublicKeyOut))
+                                                                                        {
+                                                                                            peerRanked = true;
+                                                                                        }
                                                                                     }
                                                                                 }
                                                                             }
@@ -1195,6 +1200,12 @@ namespace SeguraChain_Lib.Instance.Node.Network.Services.P2P.Broadcast
                     normVoteResult = percentNormAgree > percentNormDenied;
                 }
 
+
+                // Clean up.
+                dictionaryMemPoolTxVoteNormPeer.Clear();
+                dictionaryMemPoolTxVoteSeedPeer.Clear();
+                listOfRankedPeerPublicKeySaved.Clear();
+
                 switch (seedVoteResult)
                 {
                     case true:
@@ -1232,10 +1243,6 @@ namespace SeguraChain_Lib.Instance.Node.Network.Services.P2P.Broadcast
                 #endregion
 
 
-                // Clean up.
-                dictionaryMemPoolTxVoteNormPeer.Clear();
-                dictionaryMemPoolTxVoteSeedPeer.Clear();
-                listOfRankedPeerPublicKeySaved.Clear();
             }
 
             if (onlySomeConfirmations)
@@ -1315,6 +1322,31 @@ namespace SeguraChain_Lib.Instance.Node.Network.Services.P2P.Broadcast
                 }
             }
             return sendObject;
+        }
+
+        #endregion
+
+        #region Check Peer numeric keys signatures on packets
+
+        public static bool CheckPeerSeedNumericPacketSignature<T>(string peerIp, string peerUniqueId, T objectData, string packetNumericHash, string packetNumericSignature, ClassPeerNetworkSettingObject peerNetworkSettingObject, CancellationTokenSource cancellation, out string numericPublicKeyOut)
+        {
+            if (peerNetworkSettingObject.PeerEnableSovereignPeerVote)
+            {
+                if (!packetNumericHash.IsNullOrEmpty() && !packetNumericSignature.IsNullOrEmpty())
+                {
+                    if (ClassPeerCheckManager.PeerHasSeedRank(peerIp, peerUniqueId, out numericPublicKeyOut, out _))
+                    {
+                        if (ClassPeerCheckManager.CheckPeerSeedNumericPacketSignature(JsonConvert.SerializeObject(objectData), packetNumericHash, packetNumericSignature, numericPublicKeyOut, cancellation))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            numericPublicKeyOut = string.Empty;
+
+            return false;
         }
 
         #endregion
