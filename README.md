@@ -1,13 +1,13 @@
-<h2>SeguraChain is experimental, do not use it like he is, until the stable release is complete and available.</h2>
+<h2>Xirobod is experimental, do not use it like he is, until the stable release is complete and available.</h2>
 
-Summary: SeguraChain (Secured Chain translated from Spanish) is a technology developed mainly in C#,
+Summary: Xirobod is a technology developed mainly in C#,
 it allows to easily create and understand a decentralized blockchain process, it can be configured to support a sovereign update system,
 allowing to include updates on it without editing the content of the Blockchain. 
 
-It was developed to update Xiropht which is a centralized cryptocurrency, once the stable version is complete.
+Its a fork from Xiropht which is a centralized cryptocurrency, once the stable version is complete.
 
-<h4>For now be sure to use the current version centralized of Xiropht: https://xiropht.com/</h4>
-<h4>Official Github of Xiropht current version: https://github.com/XIROPHT</h4>
+<h4>For now be sure to use the current version centralized of Xiropht: https://xirobod.xyz/</h4>
+<h4>Official Github of Xiropht current version: https://github.com/Xirobod</h4>
 
 <h4>It will also make it possible to further trivialize cryptocurrencies, because this technology is simple to set up,
 indirectly this will increase the difficulty for those who wish to create one to distinguish
@@ -23,29 +23,6 @@ Once the whitepaper is complete, I will make the translation of this one into en
 Everything has been developed in C#, and support Net5, a downgrade to NetFramework 4.8 is available.
 Other technical informations available on the whitepaper:
 <h5>ECDSA with SHA3-512, Curve: SECT571R1</h5>
-
-<h5>Visual Studio 2019 16.9 is required.</h5>
-
-<h5>Libraries:</h5>
-
--> LZ4Net.
-
--> Newtonsoft.Json.
-
--> Open.NAT.
-
--> Portable.BouncyCastle.
-
--> ZXing.net (Desktop wallet only).
-
-More upgrades of the project will coming soon, the complete version should be done the 1st July.
-
-Every devs and potential users can send me their returns about the project, potential fix, issues and more.
-
-If you want to contact me, reach the official discord of Xiropht and send me a pm: https://discord.gg/cmRN2xD
-
-<h4>If you want to donate to the project here is my BTC Address: 39mUsJFhjU6GDrchCkQ4iJsmdvD8S2jpzU</h4>
-Thank you for your help. 
 
 <h3>To do list:</h3>
 
